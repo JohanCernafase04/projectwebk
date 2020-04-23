@@ -29,7 +29,7 @@ public class gmail {
 	private static Session session;
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub ccerna
 		
 		properties.put("mail.smtp.host", "smtp.gmail.com");
 		properties.put("mail.smtp.starttls.enable", "true");

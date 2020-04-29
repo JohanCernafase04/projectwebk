@@ -12,7 +12,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class Practica_01 extends JFrame implements ActionListener {
+//public class Practica_01 extends JFrame implements ActionListener {
+public class Practica_01  extends JFrame implements ActionListener{	
 
 	private JPanel contentPane;
 	private JButton btnNewButton;
@@ -23,6 +24,7 @@ public class Practica_01 extends JFrame implements ActionListener {
 	private JButton btnNewButton_4;
 	private JButton btnNewButton_5;
 	private JButton btnNewButton_6;
+	private JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -39,11 +41,21 @@ public class Practica_01 extends JFrame implements ActionListener {
 			}
 		});
 	}
+	
+
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
 
 	/**
 	 * Create the frame.
 	 */
 	public Practica_01() {
+		
+		initialize();
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();

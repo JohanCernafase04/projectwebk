@@ -1,16 +1,12 @@
 package codigo;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import javax.swing.JTextPane;
-import javax.swing.JTextArea;
-import javax.swing.JFormattedTextField;
 
 public class Ventana extends JFrame {
 

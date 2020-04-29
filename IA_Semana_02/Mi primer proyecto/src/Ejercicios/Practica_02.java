@@ -1,30 +1,28 @@
 package Ejercicios;
 
-import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.EventQueue;
+import java.awt.Font;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
-import java.awt.Window.Type;
-import java.awt.Font;
-import javax.swing.border.LineBorder;
-import java.awt.Color;
-import javax.swing.border.TitledBorder;
-import javax.swing.border.BevelBorder;
 import javax.swing.border.MatteBorder;
+
 import org.eclipse.wb.swing.FocusTraversalOnArray;
-import java.awt.Component;
+import javax.swing.JToolBar;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Practica_02 extends JFrame {
 
 	private JPanel contentPane;
-	private JButton btn1;
-	private JButton btn2;
-	private JButton btn3;
+	private JButton Guardar;
+	private JButton Nuevo;
+	private JButton Cerrar;
 	/**
 	 * @wbp.nonvisual location=-88,149
 	 */
@@ -37,6 +35,10 @@ public class Practica_02 extends JFrame {
 	private JTextPane txtpnApellidos;
 	private JTextPane txtpnEdad;
 	private JTextPane txtpnPeso;
+	/**
+	 * @wbp.nonvisual location=185,9
+	 */
+	private final JToolBar toolBar = new JToolBar();
 
 	/**
 	 * Launch the application.
@@ -69,21 +71,26 @@ public class Practica_02 extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		btn1 = new JButton("Guardar");
-		btn1.setBackground(new Color(255, 255, 51));
-		btn1.setForeground(Color.BLACK);
-		btn1.setBounds(324, 22, 89, 23);
-		contentPane.add(btn1);
+		Guardar = new JButton("Guardar");
+		Guardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		Guardar.setBackground(new Color(255, 255, 51));
+		Guardar.setForeground(Color.BLACK);
+		Guardar.setBounds(324, 22, 89, 23);
+		contentPane.add(Guardar);
 		
-		btn2 = new JButton("Nuevo");
-		btn2.setBackground(new Color(0, 255, 0));
-		btn2.setBounds(324, 56, 89, 23);
-		contentPane.add(btn2);
+		Nuevo = new JButton("Nuevo");
+		Nuevo.setBackground(new Color(0, 255, 0));
+		Nuevo.setBounds(324, 56, 89, 23);
+		contentPane.add(Nuevo);
 		
-		btn3 = new JButton("Cerrar");
-		btn3.setBackground(new Color(0, 255, 255));
-		btn3.setBounds(324, 90, 89, 23);
-		contentPane.add(btn3);
+		Cerrar = new JButton("Cerrar");
+		Cerrar.setBackground(new Color(0, 255, 255));
+		Cerrar.setBounds(324, 90, 89, 23);
+		contentPane.add(Cerrar);
 		
 		txtNombre = new JTextField();
 		txtNombre.setBounds(77, 23, 198, 20);
@@ -132,6 +139,6 @@ public class Practica_02 extends JFrame {
 		txtpnPeso.setText("Peso");
 		txtpnPeso.setBounds(10, 121, 60, 20);
 		contentPane.add(txtpnPeso);
-		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{contentPane, btn1, btn2, btn3, txtNombre, textField_2, textField_3, textField_4, txtpnNombre, txtpnApellidos, txtpnEdad, txtpnPeso, textField}));
+		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{contentPane, Guardar, Nuevo, Cerrar, txtNombre, textField_2, textField_3, textField_4, txtpnNombre, txtpnApellidos, txtpnEdad, txtpnPeso, textField}));
 	}
 }

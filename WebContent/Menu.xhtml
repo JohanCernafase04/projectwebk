@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+
+	<!--
+
+
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.css">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-theme.css">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/global.css">
+-->
+	<meta charset="utf-8" />
+	<title>Página Johan</title>
+</h:head>
+
+
+<p:layout style="min-width:800px;min-height:880px;">
+	<!-- INICIO - PARTE SUPERIOR-->
+
+
+	<p:layoutUnit position="north" resizable="true" size="180"
+		minSize="180" maxSize="180">
+		<h:form>
+			<p:ribbon>
+
+				<p:tab title="Archivo">
+					<p:ribbonGroup style="width:77px;hight:20px">
+						<p>
+							<p:commandLink action="#{menu.createUser}">
+								<h:graphicImage name="image/NewUser.jpg" />
+							</p:commandLink>
+						</p>
+					</p:ribbonGroup>
+
+					<p:ribbonGroup style="width:77px;hight:20px">
+						<p>
+							<p:commandLink>
+								<h:graphicImage name="image/EditUser.jpg" />
+							</p:commandLink>
+						</p>
+					</p:ribbonGroup>
+
+					<p:ribbonGroup style="width:77px;hight:20px">
+						<p>
+							<p:commandLink>
+								<h:graphicImage name="image/ActuUser.jpg" />
+							</p:commandLink>
+						</p>
+					</p:ribbonGroup>
+
+					<p:ribbonGroup style="width:77px;hight:20px">
+						<p>
+							<p:commandLink>
+								<h:graphicImage name="image/eliUser.jpg" />
+							</p:commandLink>
+						</p>
+					</p:ribbonGroup>
+
+				</p:tab>
+
+				<p:tab title="Acciones">
+					<p:ribbonGroup style="width:150px;hight:30px">
+						<p:commandButton value="Nuevo" icon="ui-ribbonicon-new"
+							styleClass="ui-ribbon-bigbutton" type="button" />
+						<p:commandButton value="Guardar" icon="ui-ribbonicon-save"
+							styleClass="ui-ribbon-bigbutton" type="button" />
+					</p:ribbonGroup>
+
+					<p:ribbonGroup style="width:150px;hight:30px">
+						<p:commandButton value="Nuevo" icon="ui-ribbonicon-new"
+							styleClass="ui-ribbon-bigbutton" type="button" />
+						<p:commandButton value="Guardar" icon="ui-ribbonicon-save"
+							styleClass="ui-ribbon-bigbutton" type="button" />
+					</p:ribbonGroup>
+
+					<p:ribbonGroup style="width:150px;hight:30px">
+						<p:commandButton value="Nuevo" icon="ui-ribbonicon-new"
+							styleClass="ui-ribbon-bigbutton" type="button" />
+						<p:commandButton value="Guardar" icon="ui-ribbonicon-save"
+							styleClass="ui-ribbon-bigbutton" type="button" />
+					</p:ribbonGroup>
+
+				</p:tab>
+
+			</p:ribbon>
+		</h:form>
+	</p:layoutUnit>
+	<!-- FIN - PARTE SUPERIOR-->
+
+
+	<!-- INICIO - PARTE IZQUIERDA-->
+	<p:layoutUnit position="west" resizable="true" size="100" minSize="310"
+		maxSize="310">
+		<h:form>
+			<p:growl>
+				<p:autoUpdate />
+			</p:growl>
+
+			<p:panelMenu style="width:300px">
+				<p:submenu label="Página Principal">
+					<p:menuitem value="Save" icon="pi pi-save" />
+					<p:menuitem value="Update" icon="pi pi-refresh" />
+				</p:submenu>
+				<p:submenu label="Cuentas Por Pagar">
+					<p:menuitem value="Delete" ajax="false" icon="pi pi-times" />
+				</p:submenu>
+				<p:separator />
+				<p:submenu label="Cuentas Por Cobrar">
+					<p:submenu label="Links" icon="pi pi-home">
+						<p:submenu label="PrimeFaces" icon="pi pi-briefcase">
+							<p:menuitem value="Home" url="http://www.primefaces.org"
+								icon="pi pi-home" />
+							<p:menuitem value="Docs"
+								url="http://www.primefaces.org/documentation" icon="pi pi-file" />
+							<p:menuitem value="Download"
+								url="http://www.primefaces.org/downloads"
+								icon="pi pi-arrow-down" />
+							<p:menuitem value="Support"
+								url="http://www.primefaces.org/support" icon="pi pi-briefcase" />
+						</p:submenu>
+					</p:submenu>
+					<p:menuitem value="Mobile" icon="pi pi-mobile" />
+				</p:submenu>
+
+				<p:submenu label="Contabilidad">
+					<p:menuitem value="Save" icon="pi pi-save" />
+					<p:menuitem value="Update" icon="pi pi-refresh" />
+				</p:submenu>
+
+				<p:submenu label="Gestión de Inventario">
+					<p:menuitem value="Save" icon="pi pi-save" />
+					<p:menuitem value="Update" icon="pi pi-refresh" />
+				</p:submenu>
+
+				<p:submenu label="Administración del Sistema">
+					<p:menuitem value="Usuarios" icon="pi pi-save" />
+					<p:menuitem value="Update" icon="pi pi-refresh" />
+				</p:submenu>
+
+			</p:panelMenu>
+		</h:form>
+
+	</p:layoutUnit>
+	<!-- FIN PARTE IZQUIERDA-->
+
+	<p:layoutUnit position="center">
+		<p:dataTable var="usuario" value="#{index.listaUsuarios}">
+			<p:column headerText="Usuario">
+				<h:outputText value="#{usuario.idusuario}" />
+			</p:column>
+
+			<p:column headerText="Nombre">
+				<h:outputText value="#{usuario.nombre}" />
+			</p:column>
+
+			<p:column headerText="Apellido Paterno">
+				<h:outputText value="#{usuario.apellidoPaterno}" />
+			</p:column>
+
+			<p:column headerText="Apellido Materno">
+				<h:outputText value="#{usuario.apellidoMaterno}" />
+			</p:column>
+
+			<p:column headerText="Correo">
+				<h:outputText value="#{usuario.correo}" />
+			</p:column>
+
+			<p:column headerText="Contraseña">
+				<h:outputText value="#{usuario.password}" />
+			</p:column>
+		</p:dataTable>
+	</p:layoutUnit>
+</p:layout>
+
+</html>

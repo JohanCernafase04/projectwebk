@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/*.jar index.html
+web: java $JAVA_OPTS -cp target/classes:target/*.jar index.xhtml

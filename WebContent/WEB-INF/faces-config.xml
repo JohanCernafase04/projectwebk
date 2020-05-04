@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigation-rule> 
+   <from-view-id>Login.xhtml</from-view-id> 
+   <from-view-id>Menu.xhtml</from-view-id>
+   <from-view-id>CreateUser.xhtml</from-view-id>
+   
+   <navigation-case> 
+      <from-action>#{SessionManageBean.loginCheck}</from-action> 
+      <from-outcome>page</from-outcome> 
+      <to-view-id>Login.html</to-view-id> 
+   </navigation-case> 
+   
+   <navigation-case> 
+      <from-action>#{SessionManageBean.loginCheck}</from-action> 
+      <from-outcome>page</from-outcome> 
+      <to-view-id>Menu.html</to-view-id> 
+   </navigation-case> 
+   
+   <navigation-case> 
+      <from-action>#{UserManageBean.createUser}</from-action> 
+      <from-outcome>page</from-outcome> 
+      <to-view-id>CreateUser.html</to-view-id> 
+   </navigation-case> 
+
+</navigation-rule> 
